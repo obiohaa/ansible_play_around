@@ -1,5 +1,5 @@
 ---
-- name: fet ansible
+- name: fet ansiblee
   hosts: dev
   remote_user: ubuntu
   become: true
