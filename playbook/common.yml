@@ -1,0 +1,19 @@
+---
+- name: fet ansible
+  hosts: dev
+  remote_user: ubuntu
+  become: true
+  become_user: root
+  tasks:
+    - name: install httpd
+      yum:
+        name: httpd
+        state: latest
+    - name: run httpd
+      service:
+        name: httpd
+        state: started
+    - name: create content
+      copy:
+        content: "Congratulations on installing ansible"
+        dest: /var/www/html/index.html
