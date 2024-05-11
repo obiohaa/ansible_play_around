@@ -5,15 +5,22 @@
   become: yes
   become_user: root
   tasks:
+    - name: install Python
+      apt:
+        name: python
+        state: present
+
     - name: install httpd
       yum:
         name: httpd
         state: latest
         use_backend: yum
+
     - name: run httpd
       service:
         name: httpd
         state: started
+
     - name: create content
       copy:
         content: "Congratulations on installing ansible"
