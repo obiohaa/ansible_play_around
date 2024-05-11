@@ -6,7 +6,7 @@
   become_user: root
   tasks:
     - name: install Python
-      apt:
+      package:
         name: python
         state: present
 
