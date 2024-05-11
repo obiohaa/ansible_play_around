@@ -1,5 +1,5 @@
 ---
-- name: fet ansible
+- name: play ansible
   hosts: dev
   remote_user: ubuntu
   become: true
