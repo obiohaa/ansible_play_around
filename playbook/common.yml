@@ -14,14 +14,14 @@
         name: python3
         state: present
 
-    - name: install httpd
-      package:
-        name: httpd
+    - name: install Apache2
+      apt:
+        name: apache2
         state: present
 
-    - name: run httpd
+    - name: run apache2
       service:
-        name: httpd
+        name: apache2
         state: started
         enabled: yes
 
@@ -29,3 +29,8 @@
       copy:
         content: "Congratulations on installing ansible"
         dest: /var/www/html/index.html
+
+    - name: restart apache
+      service:
+        name: apache2
+        state: restarted
