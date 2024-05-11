@@ -15,15 +15,15 @@
         state: present
 
     - name: install httpd
-      yum:
+      package:
         name: httpd
-        state: latest
-        use_backend: yum
+        state: present
 
     - name: run httpd
       service:
         name: httpd
         state: started
+        enabled: yes
 
     - name: create content
       copy:
