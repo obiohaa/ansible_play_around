@@ -5,9 +5,13 @@
   become: yes
   become_user: root
   tasks:
+    - name: Update apt repo
+      apt:
+        update_cache: yes
+
     - name: install Python
-      package:
-        name: python
+      apt:
+        name: python3
         state: present
 
     - name: install httpd
