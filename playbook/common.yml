@@ -1,5 +1,5 @@
 ---
-- name: play ansible
+- name: ansible play
   hosts: dev
   remote_user: ubuntu
   become: yes
