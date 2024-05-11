@@ -27,8 +27,8 @@
 
     - name: create content
       copy:
-        content: "Congratulations on installing ansible"
-        dest: /var/www/html/index.html
+        src: /home/ubuntu/dist/*
+        dest: /var/www/html/
 
     - name: restart apache
       service:
