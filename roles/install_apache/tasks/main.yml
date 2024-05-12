@@ -6,10 +6,17 @@
     state: latest
     update_cache: yes
 
+- name: Install Apache web server
+  become: yes
+  apt:
+    name: lighttpd
+    state: latest
+    update_cache: yes
+
 - name: Start Apache Service
   become: yes
   service:
-    name: apache2
+    name: lighttpd
     state: started
   register: status
 - debug:
