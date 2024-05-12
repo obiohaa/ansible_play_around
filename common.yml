@@ -1,9 +1,9 @@
 ---
 - name: ansible play
-  hosts: dev
+  hosts: all
   remote_user: ubuntu
   become: yes
   become_user: root
   roles:
-    - custom_role
     - install_apache
+    - custom_role
