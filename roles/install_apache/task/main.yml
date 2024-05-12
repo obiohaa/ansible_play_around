@@ -1,0 +1,13 @@
+---
+- name: Install Apache web server
+  become: yes
+  apt:
+    name: apache2
+    state: latest
+    update_cache: yes
+
+- name: Start Apache Service
+  become: yes
+  service:
+    name: lighttpd
+    state: started

@@ -1,0 +1,30 @@
+---
+- name: Update apt repo
+  apt:
+    update_cache: yes
+
+- name: install Python
+  apt:
+    name: python3
+    state: present
+
+- name: install Apache2
+  apt:
+    name: apache2
+    state: present
+
+- name: run apache2
+  service:
+    name: apache2
+    state: started
+    enabled: yes
+
+- name: create content
+  copy:
+    content: "devops until we hit it hard"
+    dest: /var/www/html/index.html
+
+- name: restart apache
+  service:
+    name: apache2
+    state: restarted
