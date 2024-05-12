@@ -6,4 +6,3 @@
   become_user: root
   roles:
     - install_apache
-    - custom_role
