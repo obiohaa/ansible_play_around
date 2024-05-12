@@ -12,11 +12,12 @@
     name: lighttpd
     state: latest
     update_cache: yes
-# - name: Start Apache Service
-#   become: yes
-#   service:
-#     name: lighttpd
-#     state: started
-#   register: status
-# - debug:
-#     var: status.state
+
+- name: Start Apache Service
+  become: yes
+  service:
+    name: lighttpd
+    state: started
+  register: status
+- debug:
+    var: status.state
