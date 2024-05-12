@@ -9,5 +9,8 @@
 - name: Start Apache Service
   become: yes
   service:
-    name: lighttpd
+    name: apache2
     state: started
+  register: status
+- debug:
+    var: status.state
